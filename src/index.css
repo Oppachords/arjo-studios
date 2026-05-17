@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --color-brand-gold: #d4af37;
+  --color-brand-green: #3f5e3d;
+  --color-brand-orange: #d65a31;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Using Tailwind v4 native theme engine mappings */
+  background-color: var(--color-zinc-950); 
+  color: var(--color-stone-100);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Kinetic Typography: Dual Intersecting Marquees (Footer Layout)
+   ========================================================================== */
+
+/* Left-to-Right Moving Strip: slides in, stays locked for 10s, slides out */
+@keyframes intersectLeft {
+  0% { 
+    transform: translateX(-100%); 
+  }
+  25% { 
+    transform: translateX(0%); 
+  } /* Meets at the center viewpoint */
+  75% { 
+    transform: translateX(0%); 
+  } /* Holds active pause state for exactly 10 seconds */
+  100% { 
+    transform: translateX(100%); 
+  }
+}
+
+/* Right-to-Left Moving Strip: slides in, stays locked for 10s, slides out */
+@keyframes intersectRight {
+  0% { 
+    transform: translateX(100%); 
+  }
+  25% { 
+    transform: translateX(0%); 
+  } /* Meets at the center viewpoint */
+  75% { 
+    transform: translateX(0%); 
+  } /* Holds active pause state for exactly 10 seconds */
+  100% { 
+    transform: translateX(-100%); 
+  }
+}
+
+/* Optimized easing curves for hardware acceleration on your Apple Silicon chip */
+.animate-intersect-left {
+  animation: intersectLeft 20s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+.animate-intersect-right {
+  animation: intersectRight 20s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+/* ==========================================================================
+   Utility Helpers (Optional Backdrop Micro-Animations)
+   ========================================================================== */
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-4px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
