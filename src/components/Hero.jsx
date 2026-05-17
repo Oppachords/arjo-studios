@@ -2,8 +2,19 @@ export default function Hero() {
   return (
     <section id="about" className="relative min-h-screen flex items-center pt-32 pb-20 px-6 bg-stone-50 text-stone-900 transition-colors duration-300 overflow-hidden">
       
+      {/* Editorial Watermark Background Image */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden">
+        <img 
+          src="/images/STONE/Artboard 6.png" 
+          alt="Arjo Studios conceptual design sheet overlay"
+          className="w-full h-full object-cover opacity-30 mix-blend-multiply filter contrast-105"
+        />
+        {/* Subtle radial gradient overlay to gently wash out the edges and protect legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-50/50 via-transparent to-stone-50/30" />
+      </div>
+
       {/* Upscaled and brightened neon orange accent dot */}
-      <div className="absolute top-32 right-8 md:right-16 w-6 h-6 rounded-full bg-[#ff4500] shadow-[0_0_20px_rgba(255,69,0,0.2)] opacity-95 animate-pulse" />
+      <div className="absolute top-32 right-8 md:right-16 w-6 h-6 rounded-full bg-[#ff4500] shadow-[0_0_20px_rgba(255,69,0,0.2)] opacity-95 animate-pulse z-10" />
 
       {/* Structural layout matching the editorial grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 w-full relative z-10">
