@@ -14,7 +14,7 @@ export default function Navbar() {
 
         {/* Menu Items with heavier weight */}
         <div className="hidden md:flex items-center space-x-12 text-xs font-black tracking-[0.2em] uppercase text-stone-900">
-          <a href="#works" className="hover:opacity-60 transition-opacity">Works</a>
+          <a href="#all-works" className="hover:opacity-60 transition-opacity">Works</a>
           <a href="#about" className="hover:opacity-60 transition-opacity">About Us</a>
           <a href="#contact" className="px-5 py-2.5 bg-stone-950 text-stone-100 rounded-sm hover:bg-stone-800 transition-all shadow-sm font-bold">
             Contact
@@ -32,7 +32,7 @@ export default function Navbar() {
       {/* Mobile Nav Overlay */}
       {isOpen && (
         <div className="md:hidden absolute top-24 left-0 w-full bg-stone-100 border-b border-stone-200 p-8 flex flex-col space-y-6 text-sm font-black tracking-widest uppercase text-stone-900 animate-fadeIn">
-          <a href="#works" onClick={() => setIsOpen(false)} className="hover:opacity-60">Works</a>
+          <a href="#all-works" onClick={() => setIsOpen(false)} className="hover:opacity-60">Works</a>
           <a href="#about" onClick={() => setIsOpen(false)} className="hover:opacity-60">About Us</a>
           <a href="#contact" onClick={() => setIsOpen(false)} className="py-3 text-center bg-stone-950 text-stone-100 rounded-sm font-bold">Contact</a>
         </div>
